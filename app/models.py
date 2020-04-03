@@ -37,7 +37,7 @@ class Incidents(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String, nullable=False)
     description = db.Column(db.String, nullable=False)
-    value = db.Column(db.Float(asdecimal=True), nullable=False)
+    value = db.Column(db.Float, nullable=False)
     ong_id = db.Column(db.String, db.ForeignKey('ongs.id'), nullable=False)
 
     def __init__(self, title, description, value, ong_id):
@@ -48,6 +48,7 @@ class Incidents(db.Model):
 
     def serialize(self):
         return {
+            "id": self.id,
             "title": self.title,
             "description": self.description,
             "value": self.value,

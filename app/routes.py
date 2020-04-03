@@ -7,3 +7,4 @@ from app.controllers.incident import IncidentController
 api.add_resource(OngController, '/ongs')
 api.add_resource(ProfileController, '/profile')
 api.add_resource(SessionController, '/sessions')
+api.add_resource(IncidentController, '/incidents', '/incidents/<id>')

@@ -5,6 +5,7 @@ from app.models import db, Ongs
 
 
 class SessionController(Resource):
+
     def post(self):
         ong_id = request.get_json()['id']
         ong = Ongs.query.filter_by(id=ong_id).first()
