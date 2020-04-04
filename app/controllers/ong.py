@@ -11,6 +11,7 @@ class OngController(Resource):
 
         return [ong.serialize() for ong in ongs]
 
+    # Validate
     def post(self):
         new_ong = request.get_json()
         new_ong['id'] = token_hex(4)
